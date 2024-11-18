@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class Appbar {
@@ -9,8 +8,8 @@ class Appbar {
     VoidCallback? onPressed,
   }) {
     return AppBar(
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
+      // backgroundColor: Colors.white,
+      // surfaceTintColor: Colors.white,
       title: _title(title),
       leading: _iconButton(onPressed ?? () => Get.back()),
       centerTitle: false,
@@ -24,8 +23,9 @@ class Appbar {
 
   static _iconButton(VoidCallback onPressed) {
     return IconButton(
-      onPressed: onPressed,
-      icon: SvgPicture.asset('assets/svg/ic_chevron_left.svg', width: 24, height: 24),
-    );
+        onPressed: onPressed,
+        icon: const Icon(
+          Icons.arrow_back_ios_new,
+        ));
   }
 }
